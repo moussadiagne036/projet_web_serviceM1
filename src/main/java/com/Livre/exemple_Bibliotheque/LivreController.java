@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/livre")
+@RequestMapping("/livre/api")
 public class LivreController {
     private List<Livre> livres = new ArrayList<>();
 
