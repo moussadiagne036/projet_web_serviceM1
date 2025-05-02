@@ -1,11 +1,6 @@
 package com.Livre.exemple_Bibliotheque;
 
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
-import org.springframework.web.util.UriComponentsBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +17,15 @@ public class LivreController {
         livres.add(new Livre(3L, "Le Vieux Nègre et la médaille", "Ferdinand Oyono", "978-2-07-036256-1", false));
         livres.add(new Livre(4L, "Vol de nuit", "Antoine de Saint-Exupéry", "978-2-07-020347-5", true));
         livres.add(new Livre(5L, "La Peste", "Albert Camus", "978-2-07-036084-0", true));
+        livres.add(new Livre(6L, "Phedre", "De Jean Racine", "978-2-07-036089-0", true));
+        livres.add(new Livre(7L, "Une Vie De Boy", "Ferdinant Oyono", "978-2-07-036084-7", true));
+        livres.add(new Livre(8L, "Les mots", "Jean-Paul Sartre", "978-2-07-0360100-9", true));
+        livres.add(new Livre(9L, "Récits, contes et nouvelles", " Pierre de Marivaux", "978-2-07-036102-10", true));
+        livres.add(new Livre(10L, "Correspondance, tome 2 : 1860-1866", "Charles Baudelaire", "978-2-07-0360120-11", true));
+
+
+
+
     }
 
     // --- Récupérer tous les livres ---
