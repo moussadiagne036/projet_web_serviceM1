@@ -1,4 +1,4 @@
-CREATE DATABASE livres
+CREATE DATABASE Bibliotheque
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
 USE livre;
@@ -22,6 +22,9 @@ CREATE TABLE utilisateur (
 CREATE TABLE reservation (
     id INT NOT NULL AUTO_INCREMENT,
     id_livre INT NOT NULL,
+    auteur VARCHAR(255) NOT NULL,
+    isbn DATE NOT NULL,
+    disponible VARCHAR(50) NOT NULL,
     id_utilisateur INT NOT NULL,
     date_reservation DATE NOT NULL,
     PRIMARY KEY (id),
@@ -35,10 +38,10 @@ CREATE TABLE reservation (
 CREATE TABLE pret (
     id INT NOT NULL AUTO_INCREMENT,
     id_livre INT NOT NULL,
+    auteur VARCHAR(255) NOT NULL,
+    isbn DATE NOT NULL,
+    disponible VARCHAR(50) NOT NULL,
     id_utilisateur INT NOT NULL,
-    note INT NOT NULL CHECK (note >= 1 AND note <= 5),
-    commentaire TEXT,
-    date_avis DATE NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_livre) REFERENCES livre(id)
         ON DELETE CASCADE

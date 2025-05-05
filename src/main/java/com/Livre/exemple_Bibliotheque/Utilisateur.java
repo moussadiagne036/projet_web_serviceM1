@@ -23,6 +23,7 @@ public class Utilisateur {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
+        this.password = password;
     }
 
     // Getters et setters
@@ -56,6 +57,12 @@ public class Utilisateur {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
