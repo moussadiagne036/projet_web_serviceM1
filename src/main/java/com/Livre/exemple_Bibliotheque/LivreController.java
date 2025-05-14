@@ -68,6 +68,29 @@ public class LivreController {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Le livre 'Vol de nuit' n'a pas été trouvé."));
     }
+    @PostMapping
+    public Livre addLivre(@RequestBody Livre livre) {
+        livre.setId((long) (livres.size() + 1)); // Assigner un ID unique
+        livres.add(livre);
+        return livre;
+    }
+    @PutMapping("/{id}")
+    public Livre updateLivre(@PathVariable Long id, @RequestBody Livre livreDetails) {
+        Livre livre = getLivreById(id);
+        livre.setTitre(livreDetails.getTitre());
+        livre.setAuteur(livreDetails.getAuteur());
+        livre.setIsbn(livreDetails.getIsbn());
+        livre.setDisponible(livreDetails.getDisponible());
+        return livre;
+    }
+    @DeleteMapping("/{id}")
+    public void deleteLivre(@PathVariable Long id) {
+        Livre livre = getLivreById(id);
+        livres.remove(livre);
+    }
+    // --- Endpoint pour ajouter un livre ---
+
+
 
 
 }
